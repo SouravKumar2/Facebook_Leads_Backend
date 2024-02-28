@@ -78,7 +78,7 @@ app.post(webhookEndpoint, async (req, res) => {
 
     // Fetch lead data using native fetch
     const accessToken =
-      "EABH6ij2kLGgBOy1U9DCRuHhqL0nxtzOnilChfsZCKoWyetIkZBwqxDk7ZCJTa34CZAfxB3f2XldJ85BCrwd5TcZB4UXLVcyuyGFCCXqw9hMZBJyHXoPNv7suLffZBA6s1xZBo6yDMDAfA0elWhR9ylZC4wJ6oT6TsBNbekiWbnNAcOiIWOWLDiUN3gwxj";
+      "EAAO0M7EMG6ABOwaZAZBvBUJDJFuvPlNvZC3P1QiwZAf5ZAhJlT8oXsfirwOO8vH8DtAHpvAb73QusnZBFRIVxz7pIZCOEfCQbaQqbMyfXox1AZCOkmDDHSon0j1IID6WMPG1PJ2UTs0qtzZBTZAKxIVpAZAcaVJHgiJNSPF9Np4SZB5mgkiI0YEkqtSGoLHZBO02TFEd23dcdWPddRWNqiPYywzU7lgrY6rkZD";
     const graphApiUrl = `${FACEBOOK_GRAPH_API_BASE_URL}/${formId}_${leadgenId}?access_token=${accessToken}`;
     console.log("Graph API URL:", graphApiUrl);
 
