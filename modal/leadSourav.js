@@ -18,7 +18,7 @@ const souravSchema = new mongoose.Schema(
       type: String,
     },
     formId: {
-      type: Date,
+      type: String,
     },
     userData: {
       type: Object,

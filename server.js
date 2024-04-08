@@ -58,7 +58,7 @@ app.post(webhookEndpoint, async (req, res) => {
 
     const adgroupId = leadData.adgroup_id;
     const adId = leadData.ad_id;
-    const createdTime = leadData.created_time;
+    const createdTime = new Date();
     const leadgenId = leadData.leadgen_id;
     const pageId = leadData.page_id;
     const formId = leadData.form_id;
