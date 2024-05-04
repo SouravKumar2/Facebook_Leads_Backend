@@ -44,7 +44,7 @@ app.get(webhookEndpoint, (req, res) => {
     console.log(`Webhook verified at ${new Date().toISOString()}`);
     res.status(200).send(challenge);
   } else {
-    console.error("Failed verification");
+    console.error("Failed Verification");
     res.sendStatus(403);
   }
 });
