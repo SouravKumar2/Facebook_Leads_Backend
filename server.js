@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const souravModel = require("./modal/leadSourav");
+const { _router } = require("./routes");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -33,12 +34,11 @@ const Lead = mongoose.model("Lead", leadSchema);
 
 // Your Facebook webhook endpoint
 const webhookEndpoint = "/webhook";
-
+app.use("/", _router);
 app.get(webhookEndpoint, (req, res) => {
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
-
   // Verify the token and respond to the challenge
   if (mode === "subscribe" && token === verificationToken) {
     console.log(`Webhook verified at ${new Date().toISOString()}`);
@@ -55,7 +55,6 @@ app.post(webhookEndpoint, async (req, res) => {
     const change = entry.changes[0];
     const leadData = change.value;
     console.log("Received lead data:", leadData);
-
     const adgroupId = leadData.adgroup_id;
     const adId = leadData.ad_id;
     const createdTime = new Date();
