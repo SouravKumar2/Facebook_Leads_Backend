@@ -1,5 +1,5 @@
-
 const accessTokenModel = require("../modal/accessTokenModel");
+
 
 const createAccessToken = async (req, res) => {
     try {
