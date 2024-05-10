@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const souravModel = require("./modal/leadSourav");
-const { _router } = require("./routes");
+// const { _router } = require("./routes");
+const accessTokenRouter = require("./routes/index")
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -34,7 +35,7 @@ const Lead = mongoose.model("Lead", leadSchema);
 
 // Your Facebook webhook endpoint
 const webhookEndpoint = "/webhook";
-app.use("/", _router);
+app.use("/", accessTokenRouter);
 app.get(webhookEndpoint, (req, res) => {
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
