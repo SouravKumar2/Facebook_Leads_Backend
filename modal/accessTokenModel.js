@@ -2,7 +2,13 @@ const mongoose = require("mongoose");
 
 const accessToken = new mongoose.Schema(
     {
-        accessToken: {
+        appUserId: {
+            type: String,
+        },
+        userAccessToken: {
+            type: String,
+        },
+        pageAccessToken: {
             type: String,
         },
         createdTime: {
